@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>271740D5-7CB2-4E31-8C6C-8A2AFE780DCD</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Basket.Service\Basket.Service.csproj" />
+      <ProjectReference Include="..\..\Identity.Service\Identity.Service.csproj" />
+      <ProjectReference Include="..\..\Inventory.Service\Inventory.Service.csproj" />
+      <ProjectReference Include="..\..\Ocelot.Gateway\Ocelot.Gateway.csproj" />
+    </ItemGroup>
+
+</Project>

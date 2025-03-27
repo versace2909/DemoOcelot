@@ -1,0 +1,55 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v{version}/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7291
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{version}/b/{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post",
+        "Put",
+        "Delete"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer"
+      },
+      "AddClaimsToRequest": {
+        "ClaimKey": "scope",
+        "ClaimValue": "abc" 
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{version}/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7156
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{version}/i/{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post",
+        "Put",
+        "Delete"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer"
+      },
+      "AddClaimsToRequest": {
+        "ClaimKey": "scope",
+        "ClaimValue": "abce"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7178"
+  }
+}
